@@ -1,0 +1,90 @@
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+$screen-xs-max: ($screen-sm - 1);
+$screen-sm-max: ($screen-md - 1);
+$screen-md-max: ($screen-lg - 1);
+
+@mixin respond-to($media) {
+  @if $media == xs {
+    @media (max-width: $screen-xs-max) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+      @content;
+    }
+  } @else if $media == md {
+    @media (min-width: $screen-md) and (max-width: $screen-md-max) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media (min-width: $screen-lg) {
+      @content;
+    }
+  }
+}
+
+body {
+  background-image: url("../images/background2.jpg");
+  width: 80%;
+  margin: 0 auto;
+  color: #fff;
+  font-family: "Ibarra Real Nova", serif;
+}
+ul {
+  list-style: none;
+}
+
+.search {
+  background-color: #402803;
+  border: #402803;
+  border-radius: 3px;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  font-family: "Ibarra Real Nova", serif;
+  &:hover {
+    background-color: #bba482;
+    border: #bba482;
+  }
+}
+.country-name {
+  height: 27px;
+  outline: none;
+  background-color: #bba482;
+  border: #bba482;
+  border-radius: 3px;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  font-family: "Ibarra Real Nova", serif;
+}
+.countries {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 50px;
+  @include respond-to(sm) {
+    width: 50%;
+  }
+  @include respond-to(md) {
+    width: 50%;
+  }
+  @include respond-to(lg) {
+    width: 25%;
+  }
+}
+.flag {
+  width: 150px;
+  height: auto;
+}

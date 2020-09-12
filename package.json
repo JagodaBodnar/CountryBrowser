@@ -45,7 +45,7 @@
   "dependencies": {
     "core-js": "^3.6.1",
     "jquery": "^3.4.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "popper.js": "^1.14.6",
     "tiny-slider": "^2.9.2"
   }
